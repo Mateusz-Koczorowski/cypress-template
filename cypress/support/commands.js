@@ -1,25 +1,27 @@
-// ***********************************************
-// This example commands.js shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-// For more comprehensive examples of custom
-// commands please read more here:
-// https://on.cypress.io/custom-commands
-// ***********************************************
-//
-//
-// -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+import { urls } from "./consts/urls";
+import { loginSelectors, menuSelectors } from "./consts/selectors";
+
+Cypress.Commands.add('clearLocalData', () => {
+    cy.clearLocalStorage();
+    cy.clearCookies();
+});
+
+Cypress.Commands.add('login', ({ user }) => {
+    cy.visit(urls.indentityAccountLogin);
+    cy.get(loginSelectors.emailInput).type(user.email);
+    cy.get(loginSelectors.passwordInput).type(user.password);
+    cy.get(loginSelectors.loginSubmitButton).click();
+    cy.url().should('contain', '/');
+    cy.get(menuSelectors.manage).should('be.visible').should('contain', `Hello ${user.email}!`);
+});
+
+Cypress.Commands.add('logout', () => {
+    cy.get(menuSelectors.buttonTypeSubmit)
+        .contains('Logout')
+        .should('be.visible')
+        .and('be.enabled')
+        .click();
+    cy.url().should('contain', '/');
+    cy.get(menuSelectors.menuLink(urls.indentityAccountLogin)).should('be.visible').and('contain', 'Login');
+    cy.get(menuSelectors.menuLink(urls.indentityAccountRegister)).should('be.visible').and('contain', 'Register');
+});
