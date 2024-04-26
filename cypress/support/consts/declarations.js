@@ -27,3 +27,7 @@ export const menuPagesTitles = {
     buySubscription: 'Buy subscription',
     logout: 'Logout',
 };
+
+export const buttonText = {
+    createNew: 'Create New',
+}
