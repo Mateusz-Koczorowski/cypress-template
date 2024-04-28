@@ -19,7 +19,7 @@ export const buttons = {
     buttonDetails: '[data-testid="button-details"]',
     buttonDelete: '[data-testid="button-delete"]',
     buttonAdd: '[data-testid="button-add"]',
-    buttonSave: '[data-testid="button-save]',
+    buttonSave: '[data-testid="button-save"]',
 }
 
 export const article = {
@@ -28,5 +28,15 @@ export const article = {
     freeContentInput: '[id="FreeContent"]',
     premiumContentInput: '[id="PremiumContent"]',
     imageFileInput: '[id=ImageFile]',
-    altTextInput: '[id="AltText]',
+    altTextInput: '[id="AltText"]',
+    operationsTd: '[data-testid="operations"]',
+    articleTitle: '[data-testid="article-title"]',
+    articleReleaseDate: '[data-testid="article-releaseDate"]',
+    articleFreeContent: '[data-testid="article-freeContent"]',
+    articlePremiumContent: '[data-testid="article-premiumContent"]',
+    articleAuthorLastName: '[data-testid="article-authorLastName"]',
+    articleAltText: '[data-testid="article-altText"]',
+    articleImage: '[data-testid="article-imageFile"]',
+    articleRow: '[data-testid="article-row"]',
+    articleAuthorEmail: '[data-testid="article-authorUserName"]',
 }

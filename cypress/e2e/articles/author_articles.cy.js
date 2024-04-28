@@ -6,7 +6,7 @@ const generatedArticle = articleGenerator();
 describe(`Login as admin. Test all operations on articles - Add, Delete, Details`, () => {
     before(() => {
         cy.clearLocalData();
-        cy.login({ user: users.admin});
+        cy.login({ user: users.author});
     });
 
     it('Add article', () => {
@@ -16,12 +16,12 @@ describe(`Login as admin. Test all operations on articles - Add, Delete, Details
     })
 
     it('Check details', () => {
-        cy.checkArticleDetails({ generatedArticle, authorEmail: users.admin.email }); 
+        cy.checkArticleDetails({ generatedArticle, authorEmail: users.author.email }); 
     });
 
     it('Delete article', () => {
         cy.navigateToPage({page: pages.articles });
-        cy.deleteArticle({ generatedArticle, authorEmail: users.admin.email });
+        cy.deleteArticle({ generatedArticle, authorEmail: users.author.email });
     })
 
     after('Logout user', () => {
