@@ -31,3 +31,9 @@ export const menuPagesTitles = {
 export const buttonText = {
     createNew: 'Create New',
 }
+
+export const errorMessages = {
+    wrongCredentials: 'Invalid login attempt.',
+    emptyPassword: 'The Password field is required.',
+    emptyEmail: 'The Email field is required.',
+}

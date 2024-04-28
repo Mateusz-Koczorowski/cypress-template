@@ -40,3 +40,9 @@ export const article = {
     articleRow: '[data-testid="article-row"]',
     articleAuthorEmail: '[data-testid="article-authorUserName"]',
 }
+
+export const errorSelectors = {
+    validationSummaryErrors: '[class="text-danger validation-summary-errors"]',
+    fieldValidationError: '[class="text-danger field-validation-error"]',
+    inputValidationErrorClassValue: 'form-control input-validation-error',
+};
