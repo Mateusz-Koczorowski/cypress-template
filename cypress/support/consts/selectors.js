@@ -12,6 +12,7 @@ export const menuSelectors = {
 
 export const generalSelectors = {
     h1: 'h1',
+    h2: 'h2',
 };
 
 export const buttons = {
@@ -39,6 +40,8 @@ export const article = {
     articleImage: '[data-testid="article-imageFile"]',
     articleRow: '[data-testid="article-row"]',
     articleAuthorEmail: '[data-testid="article-authorUserName"]',
+    articleCard: '[data-testid="article-card"]',
+    articleAuthorFullName: '[data-testid="article-authorFullName"]',
 }
 
 export const errorSelectors = {
@@ -46,3 +49,11 @@ export const errorSelectors = {
     fieldValidationError: '[class="text-danger field-validation-error"]',
     inputValidationErrorClassValue: 'form-control input-validation-error',
 };
+
+export const subscriptionSelectos = {
+    startDateinput: '[id="startDate"]',
+    endDateInput: '[id="endDate"]',
+    startDate: '[data-testid="start-date"]',
+    endDate: '[data-testid="end-date"]',
+    price: '[data-testid="price"]',
+}

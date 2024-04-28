@@ -72,7 +72,7 @@ Cypress.Commands.add('createNewArticle', ({ generatedArticle }) => {
 });
 
 Cypress.Commands.add('checkArticleDetails', ({ generatedArticle, authorEmail }) => {
-    const {title, freeContent, premiumContent, image, altText} = generatedArticle;    
+    const {title, freeContent, premiumContent} = generatedArticle;    
 
     cy.get(article.articleTitle)
         .contains(title)
@@ -95,7 +95,7 @@ Cypress.Commands.add('checkArticleDetails', ({ generatedArticle, authorEmail }) 
 });
 
 Cypress.Commands.add('deleteArticle', ({ generatedArticle, authorEmail }) => {
-    const {title, freeContent, premiumContent, image, altText} = generatedArticle;    
+    const {title, freeContent, premiumContent, } = generatedArticle;    
 
     cy.get(article.articleTitle)
         .contains(title)
@@ -118,4 +118,20 @@ Cypress.Commands.add('deleteArticle', ({ generatedArticle, authorEmail }) => {
     cy.get(buttons.buttonDelete).should('be.visible').click();
 
     cy.url().should('contain', pages.articles.url)
+});
+
+Cypress.Commands.add('checkHomePageArticle', ({ generatedArticle }) => {
+    const {title, premiumContent, freeContent} = generatedArticle;
+
+    cy.get(article.articleCard).should('exist').as('articleCard');
+
+    cy.get('@articleCard').find(article.articleReleaseDate).contains(getCurrentDate()).should('be.visible');
+    cy.get('@articleCard').find(article.articleTitle).contains(title).should('be.visible').click();
+
+    cy.url().should('contain', pages.articlesDetails.url);
+    cy.get(article.articleTitle).should('be.visible').and('contain', title);
+    cy.get(article.articleFreeContent).should('be.visible').and('contain', freeContent);
+    cy.get(article.articlePremiumContent).should('be.visible').and('contain', premiumContent);
+    cy.get(article.articleImage).should('be.visible');
+    cy.get(article.articleReleaseDate).should('be.visible').and('contain', getCurrentDate());
 });

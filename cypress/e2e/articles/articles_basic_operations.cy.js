@@ -1,12 +1,13 @@
 import { users } from "../../support/consts/users"; 
 import { articleGenerator } from "../../support/consts/article_generator"; 
 import { pages } from "../../support/consts/pages";
+
 const generatedArticle = articleGenerator();
 const usersList = [users.admin, users.author];
 
 usersList.forEach(user => {
     const { email } = user;
-    describe(`Login as ${user.roleName}. Test operations on articles - Add, Delete, Details`, () => {
+    describe(`Login as ${user.roleName}. Test operations on articles - Add, Delete, Details`, { tags: ['ARTICLES'], }, () => {
         before(() => {
             cy.clearLocalData();
             cy.login({ user });

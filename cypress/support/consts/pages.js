@@ -47,6 +47,7 @@ export const pages = {
     subscriptionsSelectSubsrciptionDuration: {
         url: urls.subscriptionsSelectSubsrciptionDuration,
         title: pagesTitles.subscriptionsSelectSubsrciptionDuration,
+        menuTitle: menuPagesTitles.buySubscription,
     },
     subscriptionsConfirmPayment: {
         url: urls.subscriptionsConfirmPayment,

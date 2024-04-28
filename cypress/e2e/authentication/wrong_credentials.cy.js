@@ -8,10 +8,10 @@ const wrongCredentials = {
   password: faker.internet.password()
 }
 
-describe(`Login using incorrect credentials and check if user doesn't have access to restricted pages`, () => {
+describe(`Login using incorrect credentials and check if user doesn't have access to restricted pages`, { tags: ['AUTH'], }, () => {
     before(() => {
-        cy.clearLocalData();
-        cy.visit(urls.indentityAccountLogin);
+      cy.clearLocalData();
+      cy.visit(urls.indentityAccountLogin);
     });
 
     it('Empty email and password fields', () => {
