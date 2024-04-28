@@ -9,7 +9,9 @@ export const users = {
         roleName: credentials.admin.roleName,
         permissions: [
             pages.articles, pages.subscriptions, pages.users, pages.subscriptionsUserSubscriptions
-        ]
+        ],
+        firstName: credentials.admin.firstName,
+        lastName: credentials.admin.lastName
     },
     author: {
         email: credentials.author.email,
@@ -17,7 +19,9 @@ export const users = {
         roleName: credentials.author.roleName,
         permissions: [
             pages.articles, pages.subscriptionsUserSubscriptions
-        ]
+        ],
+        firstName: credentials.author.firstName,
+        lastName: credentials.author.lastName
     },
     reader: {
         email: credentials.reader.email,
@@ -25,6 +29,8 @@ export const users = {
         roleName: credentials.reader.roleName,
         permissions: [
             pages.subscriptionsUserSubscriptions
-        ]
+        ],
+        firstName: credentials.reader.firstName,
+        lastName: credentials.reader.lastName
     }
 }

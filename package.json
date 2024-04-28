@@ -1,8 +1,18 @@
 {
   "devDependencies": {
     "@cypress/grep": "^4.0.1",
+    "@eslint/js": "^9.1.1",
     "@faker-js/faker": "^8.4.1",
     "cypress": "^13.8.1",
-    "cypress-mochawesome-reporter": "^3.8.2"
+    "cypress-mochawesome-reporter": "^3.8.2",
+    "eslint": "^9.1.1",
+    "eslint-plugin-cypress": "^3.0.2",
+    "globals": "^15.1.0"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "AUTH": "npx cypress run --env grepTags=AUTH,grepFilterSpecs=true,grepOmitFiltered=true",
+    "ARTICLES": "npx cypress run --env grepTags=ARTICLES,grepFilterSpecs=true,grepOmitFiltered=true",
+    "SUBSCRIPTIONS": "npx cypress run --env grepTags=SUBSCRIPTIONS,grepFilterSpecs=true,grepOmitFiltered=true"
   }
 }

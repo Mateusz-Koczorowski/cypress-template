@@ -10,8 +10,8 @@ export const pagesTitles = {
     subscriptionsDetails: 'Details',
     subscriptionsDelete: 'Delete Subscription',
     subscriptionsSelectSubsrciptionDuration: 'Select Subscription Duration',
-    subscriptionsConfirmPayment: 'Confirm Payment',
-    subscriptionsPaymentSuccess: 'Payment Success',
+    subscriptionsConfirmPayment: 'Payment Confirmation',
+    subscriptionsPaymentSuccess: 'Payment Successful',
     subscriptionsUserSubscriptions: 'User Subscriptions',
     users: 'List of users',
     usersCreate: 'Create',
@@ -27,3 +27,15 @@ export const menuPagesTitles = {
     buySubscription: 'Buy subscription',
     logout: 'Logout',
 };
+
+export const buttonText = {
+    createNew: 'Create New',
+    placeOrder: 'Place Order',
+    confirmAndPay: 'Confirm and Pay',
+}
+
+export const errorMessages = {
+    wrongCredentials: 'Invalid login attempt.',
+    emptyPassword: 'The Password field is required.',
+    emptyEmail: 'The Email field is required.',
+}
